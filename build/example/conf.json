@@ -1,0 +1,38 @@
+{
+    "emailConfig":
+        {
+            "fromEmail":    "alerts@infitialis.com",
+            "alertsTo":
+                [
+                    "admin@infitialis.com",
+                    "admin2@infitialis.com"
+                ],
+            "smtpServer":   "127.0.0.1",
+            "enabled":      false
+        },
+    "userAgent":    "Mozilla/4.0 (Site-Checker %HOSTNAME%)",
+    "alias":        "S-CHECK",
+    "checkSites":
+        [
+            {
+                "friendlyName":     "Google",
+                "url":              "https://www.google.co.uk/",
+                "useProxy":         false
+            },
+            {
+                "friendlyName":     "Local Apache",
+                "url":              "http://127.0.0.1/status.html",
+                "useProxy":         false,
+                "expectedContent":  "webok dbok"
+            },
+            {
+                "friendlyName":     "Local Apache Restricted",
+                "url":              "http://127.0.0.1/private/status.html",
+                "useProxy":         false,
+                "expectedContent":  "Permission Denied",
+                "expectedCode":     403
+            },
+        ],
+    "proxyURL":     "",
+    "timeout":      60
+}
